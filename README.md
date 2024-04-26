@@ -30,3 +30,20 @@ Service:
   After that just card
 
 Homepage and service has same footer
+
+Page:
+  - Homepage
+  - Services
+
+component:
+  - Container with curved shape
+  - community card
+  - Services Slideshow
+  - Services Card
+  - Footer
+  - Header
+  - Search
+
+Hard thing:
+  - Services Slideshow
+  - Some weird shape for header and some components
