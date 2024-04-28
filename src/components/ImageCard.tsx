@@ -2,6 +2,7 @@ import React from 'react';
 import CurvedContainer from './CurvedContainer';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import {Variant} from '@mui/material/styles/createTypography';
 
 interface Props {
   title: string;
@@ -9,13 +10,17 @@ interface Props {
   img: string;
   learn?: boolean;
   imgSize: number;
-  cardHeight: number;
+  cardHeight: number | string;
+  minCardHeight?: number | string;
+  variant?: Variant;
 }
 
 function ImageCard(props: Props) {
+  const variant = props.variant || "h5";
+
   return(
-    <CurvedContainer bg={props.bg} button padding={2} height={props.cardHeight}>
-      <Typography variant="h5" color="white" zIndex={2} position="relative">
+    <CurvedContainer bg={props.bg} button height={props.cardHeight} minHeight={props.minCardHeight}>
+      <Typography variant={variant} color="white" zIndex={2} position="relative" padding={2}>
         {props.title}
       </Typography>
       <Box
