@@ -5,10 +5,11 @@ import {Pagination, Autoplay} from 'swiper/modules';
 import useTheme from '@mui/material/styles/useTheme';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
+import Typography from '@mui/material/Typography';
+
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
-import Typography from '@mui/material/Typography';
 
 interface Props {
   items: CarouselRoundedItems[];
@@ -34,7 +35,7 @@ function CarouselRounded(props: Props) {
         aspectRatio: "1/1",
         borderRadius: 50,
         overflow: "hidden",
-        [theme.breakpoints.down("md")]: {
+        [theme.breakpoints.down("sm")]: {
           aspectRatio: "1/0.5",
           borderRadius: 5
         }
@@ -52,19 +53,19 @@ function CarouselRounded(props: Props) {
         direction={isDownMd ? "vertical" : "horizontal"}
         sx={(theme) => ({
           "& .swiper-wrapper": {
-
+            
           },
           "& .swiper-slide": {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            flexDirection: "column"
+            flexDirection: "column",
           },
           "& .swiper-pagination": {
-            [theme.breakpoints.up("md")]: {
+            [theme.breakpoints.up("sm")]: {
               bottom: "25%",
             },
-            [theme.breakpoints.down("md")]: {
+            [theme.breakpoints.down("sm")]: {
               
             }
           },
@@ -84,12 +85,12 @@ function CarouselRounded(props: Props) {
         {
           props.items.map((value) => (
             <SwiperSlide
-              
+              key={value.content}
             >
-              <Typography variant="h4" fontWeight={600}>
+              <Typography variant="h4" fontWeight={600} padding={2}>
                 {value.targetNumber}{value.targetPostfix}
               </Typography>
-              <Typography variant="body1" textAlign="center">
+              <Typography variant="body1" textAlign="center" padding={2}>
                 {value.content}
               </Typography>
             </SwiperSlide>
