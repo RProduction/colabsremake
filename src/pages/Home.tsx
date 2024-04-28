@@ -5,6 +5,8 @@ import ImageCard from '../components/ImageCard';
 import ParallaxCard from '../components/ParallaxCard';
 import VideoCard from '../components/VideoCard';
 import CarouselRounded from '../components/CarouselRounded';
+import CarouselCard from '../components/CarouselCard';
+import { SwiperSlide } from 'swiper/react';
 
 function Home() {
   return (
@@ -13,7 +15,7 @@ function Home() {
         <Grid container spacing={1}>
           <Grid
             xs={12} 
-            sm={9} 
+            sm={8} 
           >
             <VideoCard
               title="Making space for transformative innovation" 
@@ -21,7 +23,7 @@ function Home() {
               cardHeight="100%"
             />
           </Grid>
-          <Grid container xs={12} sm={3} gap={1} direction="column">
+          <Grid container xs={12} sm={4} gap={1} direction="column">
             <Grid 
               component={CarouselRounded} 
               xs={12} 
@@ -56,6 +58,39 @@ function Home() {
             >
             </Grid>
             <Grid 
+              xs={12}
+              component={ParallaxCard}
+              title='Card Title'
+              cardHeight={150}
+              img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtreGWV4E8pyCco35lisDbjhsOooTFB9Og6KwgnrT6g&s"
+            >
+            </Grid>
+            <Grid 
+              xs={12}
+              
+            >
+              <CarouselCard
+                cardHeight={150}
+                bg='green'
+              >
+                <SwiperSlide>
+                  test
+                </SwiperSlide>
+                <SwiperSlide>
+                  test
+                </SwiperSlide>
+                <SwiperSlide>
+                  test
+                </SwiperSlide>
+                <SwiperSlide>
+                  test
+                </SwiperSlide>
+                <SwiperSlide>
+                  test
+                </SwiperSlide>
+              </CarouselCard>
+            </Grid>
+            <Grid 
               component={ImageCard} 
               cardHeight={150} 
               learn 
@@ -63,14 +98,6 @@ function Home() {
               title='Card Title' 
               bg='orange' 
               imgSize={100} 
-              img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtreGWV4E8pyCco35lisDbjhsOooTFB9Og6KwgnrT6g&s"
-            >
-            </Grid>
-            <Grid 
-              xs={12}
-              component={ParallaxCard}
-              title='Card Title'
-              cardHeight={150}
               img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtreGWV4E8pyCco35lisDbjhsOooTFB9Og6KwgnrT6g&s"
             >
             </Grid>

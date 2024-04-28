@@ -7,7 +7,7 @@ interface Props extends PropsWithChildren {
   button?: boolean;
   bg?: string;
   padding?: number;
-  height?: number | string
+  height?: number | string;
 }
 
 function CurvedContainer(props: Props) {
@@ -18,7 +18,7 @@ function CurvedContainer(props: Props) {
       bgcolor={props.bg}
       position="relative"
       padding={props.padding}
-      minHeight={props.height}
+      height={props.height}
       overflow="hidden"
     >
       {props.children}
