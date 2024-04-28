@@ -4,6 +4,7 @@ import Grid from '@mui/material/Unstable_Grid2';
 import ImageCard from '../components/ImageCard';
 import ParallaxCard from '../components/ParallaxCard';
 import VideoCard from '../components/VideoCard';
+import CarouselRounded from '../components/CarouselRounded';
 
 function Home() {
   return (
@@ -22,14 +23,36 @@ function Home() {
           </Grid>
           <Grid container xs={12} sm={3} gap={1} direction="column">
             <Grid 
-              component={ImageCard} 
-              cardHeight={150} 
-              learn 
+              component={CarouselRounded} 
               xs={12} 
-              title='Card Title' 
-              bg='orange' 
-              imgSize={100} 
-              img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtreGWV4E8pyCco35lisDbjhsOooTFB9Og6KwgnrT6g&s"
+              bg='brown'
+              items={[
+                {
+                  content: "Ideas Supported",
+                  targetNumber: 28,
+                  targetPostfix: ""
+                },
+                {
+                  content: "Impact Scholarships Awarded",
+                  targetNumber: 14,
+                  targetPostfix: ""
+                },
+                {
+                  content: "Of plants here double as lab assistants",
+                  targetNumber: 65,
+                  targetPostfix: "%"
+                },
+                {
+                  content: "Chance of running into a punny scientist",
+                  targetNumber: 95,
+                  targetPostfix: "%"
+                },
+                {
+                  content: "Of science equipment diverted from landfill",
+                  targetNumber: 2200,
+                  targetPostfix: "kg"
+                }
+              ]} 
             >
             </Grid>
             <Grid 
