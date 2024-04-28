@@ -52,7 +52,8 @@ function MegaVideoCard(props: Props) {
         {
           props.title.map((value, i, arr) => {
             return (
-              <Typography 
+              <Typography
+                key={value.title} 
                 variant="h5" 
                 color="white" 
                 textAlign="center"
