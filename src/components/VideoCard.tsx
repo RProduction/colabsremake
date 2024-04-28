@@ -22,6 +22,7 @@ function VideoCard(props: Props) {
         autoPlay
         muted
         loop
+        height="inherit"
         sx={{
           objectFit: 'fill'
         }}
@@ -33,7 +34,7 @@ function VideoCard(props: Props) {
 
       <Box
         position="absolute"
-        bottom={4}
+        bottom={0}
         width="100%"
       >
         <Grid container>
