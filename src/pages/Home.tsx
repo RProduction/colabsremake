@@ -15,6 +15,7 @@ import ExtendedImageCard from '../components/ExtendedImageCard';
 import Hidden from '@mui/material/Hidden';
 import FormCard from '../components/FormCard';
 import Footer from '../components/Footer';
+import DoubleCarousel from '../components/DoubleCarousel';
 
 function Home() {
   return (
@@ -200,6 +201,36 @@ function Home() {
           </Grid>
         </Grid>
 
+        <DoubleCarousel
+          imgHeight={450}
+          items={[
+            {
+              title: "Item 1",
+              caption: "Item 1",
+              description: "Item 1",
+              img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtreGWV4E8pyCco35lisDbjhsOooTFB9Og6KwgnrT6g&s"
+            },
+            {
+              title: "Item 2",
+              caption: "Item 2",
+              description: "Item 2",
+              img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtreGWV4E8pyCco35lisDbjhsOooTFB9Og6KwgnrT6g&s"
+            },
+            {
+              title: "Item 3",
+              caption: "Item 3",
+              description: "Item 3",
+              img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtreGWV4E8pyCco35lisDbjhsOooTFB9Og6KwgnrT6g&s"
+            },
+            {
+              title: "Item 4",
+              caption: "Item 4",
+              description: "Item 4",
+              img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtreGWV4E8pyCco35lisDbjhsOooTFB9Og6KwgnrT6g&s"
+            }
+          ]}
+        />
+
         <SectionTitle
           title='Space for big thinking, problem-solvers and bio-innovators'
           subtitle="Community"
@@ -256,7 +287,7 @@ function Home() {
           <Grid xs={12} sm={6}>
             <ParallaxCard
               img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtreGWV4E8pyCco35lisDbjhsOooTFB9Og6KwgnrT6g&s"
-              cardHeight={350}
+              cardHeight={400}
             />
             </Grid>
           <Grid xs={12} sm={6}>
@@ -266,7 +297,7 @@ function Home() {
               inputText='Your Email Address'
               bg='blue'
               description='Subscribe for updates, news, events, and community resources.'
-              cardHeight={350}
+              cardHeight={400}
             />
           </Grid>
         </Grid>
