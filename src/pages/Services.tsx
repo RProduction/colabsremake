@@ -151,7 +151,7 @@ function Services() {
           <Grid xs={12} sm={6}>
             <ParallaxCard
               img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtreGWV4E8pyCco35lisDbjhsOooTFB9Og6KwgnrT6g&s"
-              cardHeight={350}
+              cardHeight={450}
             />
             </Grid>
           <Grid xs={12} sm={6}>
@@ -161,7 +161,7 @@ function Services() {
               inputText='Your Email Address'
               bg='blue'
               description='Subscribe for updates, news, events, and community resources.'
-              cardHeight={350}
+              cardHeight={450}
             />
           </Grid>
         </Grid>
