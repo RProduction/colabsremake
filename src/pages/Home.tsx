@@ -14,6 +14,7 @@ import FullScreenCarousel from '../components/FullScreenCarousel';
 import ExtendedImageCard from '../components/ExtendedImageCard';
 import Hidden from '@mui/material/Hidden';
 import FormCard from '../components/FormCard';
+import Footer from '../components/Footer';
 
 function Home() {
   return (
@@ -139,7 +140,7 @@ function Home() {
         />
       </Box>
 
-      <Container>
+      <Container maxWidth="xl">
         <MegaVideoCard
           video="/placeholder.mp4"
           cardHeight={500}
@@ -251,7 +252,7 @@ function Home() {
           </Grid>
         </Grid>
 
-        <Grid container spacing={1}>
+        <Grid container spacing={1} marginTop={4} marginBottom={1}>
           <Grid xs={12} sm={6}>
             <ParallaxCard
               img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtreGWV4E8pyCco35lisDbjhsOooTFB9Og6KwgnrT6g&s"
@@ -269,6 +270,69 @@ function Home() {
             />
           </Grid>
         </Grid>
+        
+        <Footer
+          bg='#222222'
+          header='Co-Labs Melbourne respectfully acknowledges the Traditional Custodians of the land on which we operate our business – the Boon Wurrung and Wurundjeri peoples of the Kulin Nation.'
+          cardHeight={300}
+          contacts={[
+            {
+              address: "CoLabs Coworking 1/306 Albert St, Brunswick",
+              telp: "(03) 9111 2399"
+            },
+            {
+              address: "CoLabs Coworking 1/306 Albert St, Brunswick",
+              telp: "(03) 9111 2399"
+            },
+            {
+              address: "CoLabs Coworking 1/306 Albert St, Brunswick",
+              telp: "(03) 9111 2399"
+            },
+            {
+              address: "CoLabs Coworking 1/306 Albert St, Brunswick",
+              telp: "(03) 9111 2399"
+            }
+          ]}
+          links={[
+            {
+              text: "Services",
+              url: "/services"
+            },
+            {
+              text: "Privacy Policy",
+              url: "/"
+            },
+            {
+              text: "Our Principles",
+              url: "/"
+            },
+            {
+              text: "Terms and Conditions",
+              url: "/"
+            },
+            {
+              text: "About",
+              url: "/"
+            },
+            {
+              text: ""
+            },
+            {
+              text: "Community",
+              url: "/"
+            },
+            {
+              text: ""
+            },
+            {
+              text: "Contact",
+              url: "/"
+            },
+            {
+              text: "© 2024 CoLabs"
+            }
+          ]}
+        />
       </Container>
     </>
   )

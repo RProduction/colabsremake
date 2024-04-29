@@ -39,7 +39,8 @@ declare module '@mui/material/Fab' {
 const theme = createTheme({
   palette: {
     menu: {
-      main: Yellow[400]
+      main: Yellow[400],
+      contrastText: "black"
     },
     cardFab: {
       main: "#000000"
