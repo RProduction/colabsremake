@@ -9,11 +9,14 @@ interface Props extends PropsWithChildren {
   padding?: number;
   height?: number | string;
   minHeight?: number | string;
+  borderWidth?: number;
+  borderColor?: string;
 }
 
 function CurvedContainer(props: Props) {
   return(
     <Box
+      border={props.borderWidth ? `solid ${props.borderWidth}px ${props.borderColor}` : ""}
       flexGrow={1}
       borderRadius={3}
       bgcolor={props.bg}
