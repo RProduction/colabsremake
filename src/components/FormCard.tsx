@@ -19,7 +19,7 @@ interface Props {
 
 function FormCard(props: Props) {
   return(
-    <CurvedContainer bg={props.bg} padding={2} minHeight={props.cardHeight}>
+    <CurvedContainer bg={props.bg} padding={2} height={props.cardHeight}>
       <Box
         display="flex"
         justifyContent="space-between"
