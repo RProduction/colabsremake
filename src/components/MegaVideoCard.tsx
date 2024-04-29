@@ -29,6 +29,8 @@ function MegaVideoCard(props: Props) {
         autoPlay
         muted
         loop
+        width="100%"
+        height="inherit"
         sx={{
           objectFit: 'fill'
         }}
