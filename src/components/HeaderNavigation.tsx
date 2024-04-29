@@ -50,7 +50,6 @@ function HeaderNavigation() {
         <Box display="flex" gap={1}>
           <Button color='menu' variant="contained" disableElevation sx={{
             borderRadius: 30,
-            color: 'black',
             textTransform: 'none'
           }}>
             Menu
