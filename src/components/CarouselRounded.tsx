@@ -33,7 +33,7 @@ function CarouselRounded(props: Props) {
         width: "100%",
         height: "auto",
         aspectRatio: "1/1",
-        borderRadius: 50,
+        borderRadius: 100,
         overflow: "hidden",
         [theme.breakpoints.down("sm")]: {
           aspectRatio: "1/0.5",
