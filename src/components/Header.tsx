@@ -52,7 +52,7 @@ function Header() {
               }}
             >
               <Hidden mdDown>
-                <Typography variant="caption" display="block" color="black" zIndex={5} position="relative">
+                <Typography variant="caption" display="block" color="#000000">
                   Naarm/Melbourne
                 </Typography>
                 <Link to="/">
