@@ -30,7 +30,7 @@ function FormCard(props: Props) {
         <Typography color="white" variant="h4">
           {
             props.title.split("<br/>").map((value, i, arr) => (
-              <span>{value}{i < arr.length ? <br/> : null}</span>
+              <span key={`${value}${i}`}>{value}{i < arr.length ? <br/> : null}</span>
             ))
           }
         </Typography>
