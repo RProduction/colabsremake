@@ -53,6 +53,7 @@ function FormCard(props: Props) {
             color='black'
             sx={{
               color: "white",
+              boxShadow: "none"
             }}
           >
             <Arrow/>
