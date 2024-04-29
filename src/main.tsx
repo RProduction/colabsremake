@@ -13,23 +13,26 @@ declare module '@mui/material/styles' {
   interface Palette {
     menu: Palette['primary'];
     cardFab: Palette['primary'];
+    black: Palette['primary'];
   }
 
   interface PaletteOptions {
     menu?: PaletteOptions['primary'];
     cardFab?: PaletteOptions['primary'];
+    black?: PaletteOptions['primary'];
   }
 }
 
 declare module '@mui/material/Button' {
   interface ButtonPropsColorOverrides {
-    menu: true
+    menu: true;
   }
 }
 
 declare module '@mui/material/Fab' {
   interface FabPropsColorOverrides {
-    cardFab: true
+    cardFab: true;
+    black: true;
   }
 }
 
@@ -40,6 +43,9 @@ const theme = createTheme({
     },
     cardFab: {
       main: "#000000"
+    },
+    black: {
+      main: "black"
     }
   }
 })
