@@ -5,14 +5,15 @@ import Box from '@mui/material/Box';
 import {Parallax, ParallaxLayer} from '@react-spring/parallax'
 
 interface Props {
-  title: string;
+  title?: string;
   img: string;
   cardHeight: number;
+  button? : boolean;
 }
 
 function ParallaxCard(props: Props) {
   return(
-    <CurvedContainer button padding={2} height={props.cardHeight}>
+    <CurvedContainer button={props.button} padding={2} height={props.cardHeight}>
       <Box
         position="absolute"
         top={0}
@@ -29,9 +30,11 @@ function ParallaxCard(props: Props) {
       >
 
       </Box>
-      <Typography variant="h5" color="white" zIndex={2} position="relative">
-        {props.title}
-      </Typography>
+      {props.title ? 
+        <Typography variant="h5" color="white" zIndex={2} position="relative">
+          {props.title}
+        </Typography>
+      : null}
     </CurvedContainer>
   )
 }
