@@ -2,7 +2,6 @@ import React from 'react';
 import CurvedContainer from './CurvedContainer';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import {Parallax, ParallaxLayer} from '@react-spring/parallax'
 
 interface Props {
   title?: string;
