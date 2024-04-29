@@ -23,6 +23,7 @@ function VideoCard(props: Props) {
         muted
         loop
         height="inherit"
+        width="100%"
         sx={{
           objectFit: 'fill'
         }}
