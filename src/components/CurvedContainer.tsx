@@ -1,6 +1,6 @@
 import React, {PropsWithChildren} from 'react';
 import Box from '@mui/material/Box';
-import Fab from '@mui/material/Fab';
+import Fab, {fabClasses} from '@mui/material/Fab';
 import Arrow from '@mui/icons-material/ArrowRight';
 
 interface Props extends PropsWithChildren {
@@ -25,6 +25,12 @@ function CurvedContainer(props: Props) {
       height={props.height}
       minHeight={props.minHeight}
       overflow="hidden"
+      className="curved-container"
+      sx={{
+        "& :hover .curved-container-arrow": {
+          transform: "rotate(-30deg)"
+        }
+      }}
     >
       {props.children}
       {props.button ?
@@ -44,10 +50,15 @@ function CurvedContainer(props: Props) {
             color="cardFab"
             sx={{
               color: "white",
-              boxShadow: "none"
+              boxShadow: "none",
             }}
           >
-            <Arrow/>
+            <Arrow 
+              sx={{
+                transition: "transform 0.5s ease",
+              }} 
+              className='curved-container-arrow'
+            />
           </Fab>
         </Box>
       : null}

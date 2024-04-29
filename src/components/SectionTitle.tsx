@@ -1,6 +1,8 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import Collapse from '@mui/material/Collapse';
+import {useAppear} from '../hooks/useAppear';
 
 interface Props {
   title: string;
@@ -8,6 +10,8 @@ interface Props {
 }
 
 function SectionTitle(props: Props) {
+  const {check, ref} = useAppear();
+
   return (
     <>
       <Typography 
@@ -22,18 +26,26 @@ function SectionTitle(props: Props) {
       >
         {props.title}
       </Typography>
-      <Box
-        width="fit-content"
-        border="solid 1px"
-        borderRadius={5}
-        borderColor="black"
-        padding={1}
-        marginBottom={2}
-      >
-        <Typography>
-          {props.subtitle}
-        </Typography>
-      </Box>
+
+      <div ref={ref}>
+        <Collapse
+          orientation='vertical'
+          in={check}
+        >
+          <Box
+            width="fit-content"
+            border="solid 1px"
+            borderRadius={5}
+            borderColor="black"
+            padding={1}
+            marginBottom={2}
+          >
+            <Typography>
+              {props.subtitle}
+            </Typography>
+          </Box>
+        </Collapse>
+      </div>
     </>
   )
 }

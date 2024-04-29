@@ -2,9 +2,10 @@ import React from 'react';
 import CurvedContainer from './CurvedContainer';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Unstable_Grid2';
 import Fab from '@mui/material/ButtonBase';
 import Arrow from '@mui/icons-material/ArrowRight';
+import Fade from '@mui/material/Fade';
+import {useAppear} from '../hooks/useAppear';
 
 interface Props {
   title: Title[];
@@ -53,23 +54,29 @@ function MegaVideoCard(props: Props) {
       >
         {
           props.title.map((value, i, arr) => {
+            const {check, ref} = useAppear();
+
             return (
-              <Typography
-                key={value.title} 
-                variant="h5" 
-                color="white" 
-                textAlign="center"
-                sx={(theme) => ({
-                  padding: 1,
-                  backgroundColor: "rgba(0, 0, 0, 0.4)",
-                  borderTopLeftRadius: value.roundedTop ? 16 : 0,
-                  borderTopRightRadius: value.roundedTop ? 16 : 0,
-                  borderBottomLeftRadius: value.roundedBottom ? 16 : 0,
-                  borderBottomRightRadius: value.roundedBottom ? 16 : 0,
-                })}
-              >
-                {value.title}
-              </Typography>
+              <div ref={ref}>
+                <Fade in={check} timeout={1000}>
+                  <Typography
+                    key={value.title} 
+                    variant="h5" 
+                    color="white" 
+                    textAlign="center"
+                    sx={(theme) => ({
+                      padding: 1,
+                      backgroundColor: "rgba(0, 0, 0, 0.4)",
+                      borderTopLeftRadius: value.roundedTop ? 16 : 0,
+                      borderTopRightRadius: value.roundedTop ? 16 : 0,
+                      borderBottomLeftRadius: value.roundedBottom ? 16 : 0,
+                      borderBottomRightRadius: value.roundedBottom ? 16 : 0,
+                    })}
+                  >
+                    {value.title}
+                  </Typography>
+                </Fade>
+              </div>
             )
           })
         }
