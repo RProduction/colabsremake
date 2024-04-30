@@ -9,16 +9,54 @@ import Hidden from '@mui/material/Hidden';
 import FormCard from '../components/FormCard';
 import Footer from '../components/Footer';
 import ServiceCard from '../components/ServiceCard';
+import ServicesContent from '../components/ServicesContent';
 
 function Services() {
   return (
     <>
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{position: "relative"}}>
         <VideoCard
           title="Co-Labs gives people a place to experiment and create" 
           video="/placeholder.mp4" 
           cardHeight={600}
         />
+
+        {/*
+        <ServicesContent
+          items={[
+            {
+              id: "Lab Space",
+              bg: "blue",
+              img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtreGWV4E8pyCco35lisDbjhsOooTFB9Og6KwgnrT6g&s",
+              title: "Test",
+              subtitle: "Test"
+            },
+            {
+              id: "Build a Lab",
+              bg: "orange",
+              img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtreGWV4E8pyCco35lisDbjhsOooTFB9Og6KwgnrT6g&s",
+              title: "Test",
+              subtitle: "Test"
+            },
+            {
+              id: "Innovation Facilition",
+              bg: "yellow",
+              img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtreGWV4E8pyCco35lisDbjhsOooTFB9Og6KwgnrT6g&s",
+              title: "Test",
+              subtitle: "Test"
+            },
+            {
+              id: "Office Space",
+              bg: "purple",
+              img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJtreGWV4E8pyCco35lisDbjhsOooTFB9Og6KwgnrT6g&s",
+              title: "Test",
+              subtitle: "Test"
+            }
+          ]}
+        />
+        */}
+
+
         <SectionTitle
           title='By facilitating systems innovation we believe we can generate social, economic and environmental outcomes that will benefit the health and well-being of people and the planet.'
           subtitle="Why CoLabs"
