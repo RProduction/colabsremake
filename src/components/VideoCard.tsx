@@ -6,6 +6,8 @@ import Grid from '@mui/material/Unstable_Grid2';
 import Fab from '@mui/material/ButtonBase';
 import Arrow from '@mui/icons-material/ArrowDownward';
 
+import {useInView, animated} from '@react-spring/web';
+
 interface Props {
   title: string;
   video: string;
@@ -13,6 +15,16 @@ interface Props {
 }
 
 function VideoCard(props: Props) {
+  const [refText, animText] = useInView(() => ({
+    from: {opacity: 0, transform: "translateY(-10px)"},
+    to: {opacity: 1, transform: "translateY(0px)"}
+  }), {once: true});
+
+  const [refBtn, animBtn] = useInView(() => ({
+    from: {opacity: 0, transform: "translateY(-10px)"},
+    to: {opacity: 1, transform: "translateY(0px)"}
+  }), {once: true});
+
   return(
     <CurvedContainer height={props.cardHeight}>
       <Box
@@ -44,10 +56,25 @@ function VideoCard(props: Props) {
             paddingTop: 2,
             paddingRight: 2
           }}>
-            <Typography variant="h4" color="black">
+            <Typography
+              ref={refText}
+              component={animated.p} 
+              variant="h4" 
+              color="black"
+              style={{
+                opacity: animText.opacity as unknown as number,
+                transform: animText.transform as unknown as string
+              }}
+            >
               {props.title}
             </Typography>
             <Fab
+              ref={refBtn}
+              component={animated.button}
+              style={{
+                opacity: animBtn.opacity as unknown as number,
+                transform: animBtn.transform as unknown as string
+              }}
               sx={{
                 width: 25,
                 height: 25,
