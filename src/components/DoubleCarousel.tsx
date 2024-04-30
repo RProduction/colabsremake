@@ -127,8 +127,8 @@ function DoubleCarousel(props: Props) {
             })}
           >
             {
-              props.items.map((value) => (
-                <SwiperSlide>
+              props.items.map((value, i) => (
+                <SwiperSlide key={`${value.title}${i}`}>
                   <Box
                     width="fit-content"
                     border="solid 1px"
