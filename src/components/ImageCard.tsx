@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import CurvedContainer from './CurvedContainer';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
@@ -13,13 +13,22 @@ interface Props {
   cardHeight: number | string;
   minCardHeight?: number | string;
   variant?: Variant;
+  translateUpHover?: boolean;
 }
 
 function ImageCard(props: Props) {
   const variant = props.variant || "h5";
+  const [hover, setHover] = useState<boolean>(false);
 
   return(
-    <CurvedContainer bg={props.bg} button height={props.cardHeight} minHeight={props.minCardHeight}>
+    <CurvedContainer 
+      bg={props.bg} 
+      button 
+      height={props.cardHeight} 
+      minHeight={props.minCardHeight} 
+      translateUpHover={props.translateUpHover}
+      onHover={(state) => setHover(state)}
+    >
       <Typography variant={variant} color="white" zIndex={2} position="relative" padding={2}>
         {props.title}
       </Typography>
@@ -38,11 +47,19 @@ function ImageCard(props: Props) {
           width={props.imgSize} 
           height={props.imgSize}       
           zIndex={1}
-          sx={{
-            backgroundImage: `url('${props.img}')`
-          }}
+          overflow="hidden"
         >
+          <Box
+            width="inherit"
+            height="inherit"
+            sx={{
+              backgroundImage: `url('${props.img}')`,
+              transition: "transform 0.5s ease",
+              transform: hover ? "scale(1.2)" : "scale(1)"
+            }}
+          >
 
+          </Box>
         </Box>
       </Box>
       {props.learn ?
