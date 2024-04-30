@@ -12,6 +12,7 @@ interface Props {
   title: string;
   video: string;
   cardHeight: number | string;
+  cardMinHeight?: number | string;
 }
 
 function VideoCard(props: Props) {
@@ -26,7 +27,7 @@ function VideoCard(props: Props) {
   }), {once: true});
 
   return(
-    <CurvedContainer height={props.cardHeight}>
+    <CurvedContainer height={props.cardHeight} minHeight={props.cardMinHeight}>
       <Box
         component="video"
         borderRadius={3}
