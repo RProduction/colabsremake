@@ -40,13 +40,13 @@ const theme = createTheme({
   palette: {
     menu: {
       main: Yellow[400],
-      contrastText: "black"
+      contrastText: "#000000"
     },
     cardFab: {
       main: "#000000"
     },
     black: {
-      main: "black"
+      main: "#000000"
     }
   }
 })
