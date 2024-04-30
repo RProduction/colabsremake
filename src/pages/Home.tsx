@@ -30,6 +30,7 @@ function Home() {
               title="Making space for transformative innovation" 
               video="/placeholder.mp4" 
               cardHeight="100%"
+              cardMinHeight={600}
             />
           </Grid>
           <Grid container xs={12} sm={4} gap={1} direction="column">
