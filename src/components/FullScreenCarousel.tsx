@@ -54,6 +54,7 @@ function FullScreenCarousel(props: Props) {
           autoplay={{delay: 2000}}
           loop
           sx={{
+            paddingY: 2,
             "& .swiper-slide": {
               marginX: 1
             }
@@ -69,6 +70,7 @@ function FullScreenCarousel(props: Props) {
                   title={value.title}
                   learn
                   cardHeight="inherit"
+                  translateUpHover
                 />
               </SwiperSlide>
             ))
