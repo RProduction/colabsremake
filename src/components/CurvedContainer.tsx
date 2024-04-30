@@ -1,4 +1,4 @@
-import React, {PropsWithChildren} from 'react';
+import React, {PropsWithChildren, useEffect, useState} from 'react';
 import Box from '@mui/material/Box';
 import Fab, {fabClasses} from '@mui/material/Fab';
 import Arrow from '@mui/icons-material/ArrowRight';
@@ -11,11 +11,23 @@ interface Props extends PropsWithChildren {
   minHeight?: number | string;
   borderWidth?: number;
   borderColor?: string;
+  onHover?: (state: boolean) => void;
+  translateUpHover?: boolean;
 }
 
 function CurvedContainer(props: Props) {
+  const [hover, setHover] = useState<boolean>(false);
+
+  useEffect(() => {
+    if(props.onHover != undefined) {
+      props?.onHover(hover);
+    }
+  }, [hover]);
+
   return(
     <Box
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
       border={props.borderWidth ? `solid ${props.borderWidth}px ${props.borderColor}` : ""}
       flexGrow={1}
       borderRadius={3}
@@ -25,11 +37,9 @@ function CurvedContainer(props: Props) {
       height={props.height}
       minHeight={props.minHeight}
       overflow="hidden"
-      className="curved-container"
       sx={{
-        "& :hover .curved-container-arrow": {
-          transform: "rotate(-30deg)"
-        }
+        transition: "transform 0.5s ease",
+        transform: hover && props.translateUpHover ? "translateY(-10px)" : "translateY(0px)"
       }}
     >
       {props.children}
@@ -48,14 +58,18 @@ function CurvedContainer(props: Props) {
           <Fab
             size="small"
             color="cardFab"
-            sx={{
+            sx={(theme) => ({
               color: "white",
               boxShadow: "none",
-            }}
+              "&:hover": {
+                backgroundColor: theme.palette.black.main
+              }
+            })}
           >
             <Arrow 
               sx={{
                 transition: "transform 0.5s ease",
+                transform: hover ? "rotate(-30deg)" : "rotate(0deg)"
               }} 
               className='curved-container-arrow'
             />
